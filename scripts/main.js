@@ -1,14 +1,25 @@
 // JavaScript Document
-			   
+var connection = null;
+
 function displayLists()
 {
-	var connection = new XMLHttpRequest();
-	connection.open("Get", 'data.xml', false);
-	connection.setRequestHeader('Content-Type', 'text/xml');
-	connection.send(null);
 	
+	if (window.XMLHttpRequest) 
+	{
+     	connection = new XMLHttpRequest();
+    }
+	
+    else 
+  	{
+	  connection = new ActiveXObject("Microsoft.XMLHTTP");
+  	}
+
+	connection.open("Get", "scripts/test.xml", false);
+	connection.setRequestHeader('Content-Type', 'text/xml');
+	connection.send(null);	
 	var xmlDoc = connection.responseXML;
-	var root = xmlDoc.childNodes[0];
+	var root = xmlDoc.documentElement.childNodes;
+	console.log(root);
 	
 	//var street;
 	//var town;
@@ -18,20 +29,20 @@ function displayLists()
 	var other = '<ul>';
 	var percentages = '';	
 	
-	for(var i = 0; i < root.children.length; ++i)
-	{
-			var subitem = root.children[i];
-			
+	for(var i = 0; i < root.length; i++)
+	{					
+			var subitem = root[i];
+		
 			switch(subitem)
-			{
+			{				
 				case 'Data':
-					var child = root.children[i].children
+					var child = root[i].children;
+					console.log('This is child: ' + child);
 
 						for(j = 0; j < child.children.length; ++i)
 						{
 							var subChild = child.children[j];
-
-
+							
 							switch(subChild)
 							{
 								case 'Name':

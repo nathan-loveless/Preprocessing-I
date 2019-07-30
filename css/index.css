@@ -134,9 +134,11 @@ html,
 body {
   height: 100%;
 }
-<<<<<<< HEAD
 /* my Code starts here */
 /* Global variables, elements only */
 /* Global styles for elements */
-=======
->>>>>>> nathan-loveless/nathan-loveless
+#name {
+  width: 500px;
+  height: 200px;
+  background-color: lightblue;
+}
