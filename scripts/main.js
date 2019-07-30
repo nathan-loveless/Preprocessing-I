@@ -1,0 +1,93 @@
+// JavaScript Document
+			   
+function displayLists()
+{
+	var connection = new XMLHttpRequest();
+	connection.open("Get", 'data.xml', false);
+	connection.setRequestHeader('Content-Type', 'text/xml');
+	connection.send(null);
+	
+	var xmlDoc = connection.responseXML;
+	var root = xmlDoc.childNodes[0];
+	
+	//var street;
+	//var town;
+	//var phone;
+	var work = '';
+	var collegeInfo = '';
+	var other = '<ul>';
+	var percentages = '';	
+	
+	for(var i = 0; i < root.children.length; ++i)
+	{
+			var subitem = root.children[i];
+			
+			switch(subitem)
+			{
+				case 'Data':
+					var child = root.children[i].children
+
+						for(j = 0; j < child.children.length; ++i)
+						{
+							var subChild = child.children[j];
+
+
+							switch(subChild)
+							{
+								case 'Name':
+									var name = subChild.getElementsByTagName('Name');
+									var divElement = document.getElementById('name');
+									divElement.innerHTML = '<h1>' + name + '</h1>';
+									break;
+
+								case 'Title':
+									var title = subChild.getElementsByTagName('Title');
+									divElement = document.getElementById('title');
+									divElement.innerHTML = '<h2>' + title + '<h2>';
+									break;
+
+								/* This is not used in the current resume, but keeping it*/
+								/*case 'Profile':
+									var profile = subChild.getElementsByTagName('Profile'); 
+									divElement = document.getElementById('profile_container');
+									divElement.innerHTML = profile;												
+									break;*/
+
+								case 'Street':
+									var street = subChild.getElementsByTagName('Street')
+									divElement = document.getElementById('street');
+									divElement.innerHTML = street;
+									break;
+
+								case 'Town':
+									town = subChild.getElementsByTagName('Town'); 
+									divElement = document.getElementById('town');
+									divElement.innerHTML = town;
+									break;
+
+								case 'Phone':
+									phone = subChild.getElementsByTagName('Phone');
+									divElement = document.getElementById('phone');
+									divElement.innerHTML = phone;
+									break;
+
+								case 'Email':
+									var email = subChild.getElementsByTagName('Email'); 
+									divElement = document.getElementById('email');
+									divElement.innerHTML = street + town + phone + email;
+									break;
+
+								case 'Summary':
+									var summPara = subChild.getElementsByTagName('Summary');
+									divElement = document.getElementById('about-me');
+									divElement.innerHTML = summPara;
+									break;
+
+								default:
+									// Nothing
+							}
+
+						}
+			}
+	}
+}

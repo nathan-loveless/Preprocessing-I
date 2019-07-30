@@ -2,18 +2,47 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  	<meta charset="utf-8">
 
-  <title>My Resume</title>
+  	<title>My Resume</title>
 
-  <link rel="stylesheet" href="css/index.css">
+  	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="scripts/main.js"></script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 
-<body>
-  <h1>My Resume</h1>
-</body>
+	<body>
+		<nav>
+			<a href="#">Home</a>
+			<a href="#">About Me</a>
+			<a href="#">Employment</a>
+			<a href="#">Education</a>
+			<a href="#">Other Information</a>
+			<a href="#">Cover Letter</a>	
+		</nav>
+
+		<div class="main-content">
+			<header>
+				<div class="profile-image"></div>
+				<div class="contact-information">
+					<div id="name"></div>
+					<div id="title"></div>
+					<div id="birthday"></div>
+					<div id="email"></div>
+					<div id="phone"></div>
+					<div id="street"></div>
+					<div id="town"></div>
+				</div>		
+			</header>
+			<section class="work-experience"></section>
+			<section id="about-me"></section>
+			<section class="education"></section>
+			<section class="other-information"></section>
+			<section class="skills"></section>
+		</div>
+		<script>displayLists();</script>
+	</body>
 </html>
