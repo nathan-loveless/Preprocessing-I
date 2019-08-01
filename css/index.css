@@ -137,3 +137,28 @@ body {
 /* my Code starts here */
 /* Global variables, elements only */
 /* Global styles for elements */
+html {
+  height: auto;
+  margin: 0 auto;
+  background: floralwhite;
+}
+main-container header {
+  background: lightblue;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+main-container .profile-image {
+  width: 191px;
+  height: 208px;
+  background-image: url("../images/Me.jpg");
+  vertical-align: middle;
+}
+main-container .contact-information h1 {
+  font-size: 2em;
+  color: dimgray;
+}
+main-container .contact-information h2 {
+  font-size: 1.5em;
+  color: dimgray;
+}

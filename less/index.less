@@ -70,6 +70,9 @@ html, body
 .section-style()
 {
 	background: @section-color;
+	display: flex;
+	justify-content: flex-start;
+	padding: 20px;
 }
 
 .h1-style()
@@ -81,13 +84,39 @@ html, body
 .h2-style()
 {
 	font-size: 1.5em;
-	color: h3-color;
+	color: @text-color;
 }
 
 .h3-style()
 {
 	font-size: 1.0em;
 	color: h3-color;
+}
+
+html 
+{ 
+	height: auto;
+	margin: 0 auto;
+	background: @background-color;
+}
+
+main-container
+{
+	header { .section-style; }
+	
+	.profile-image
+	{
+		width: 191px;
+		height: 208px;	
+		background-image: url("../images/Me.jpg");
+		vertical-align: middle;
+	}
+	
+	.contact-information
+	{
+		h1 { .h1-style; }
+		h2 { .h2-style; }
+	}
 }
 
 
