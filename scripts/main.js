@@ -44,6 +44,8 @@ function displayLists()
 				case 'Data':					
 					child = subitem.children;
 					
+					var street, town = '';
+					
 						for(var j = 0; j < child.length; ++j)
 						{							
 							switch(child[j].nodeName)
@@ -61,6 +63,27 @@ function displayLists()
 									divElement = document.getElementById('title');
 									divElement.innerHTML = '<h2>' + title + '<h2>';
 									break;
+									
+								case 'Birthday':
+									//var title = subChild.getElementsByTagName('Title');
+									var birthday = child[j].innerHTML;
+									divElement = document.getElementById('birthday');
+									divElement.innerHTML = birthday;
+									break;
+									
+								case 'Email':
+									//var email = subChild.getElementsByTagName('Email'); 
+									var email = child[j].innerHTML;
+									divElement = document.getElementById('email');
+									divElement.innerHTML = email;
+									break;
+									
+								case 'Phone':
+									//phone = subChild.getElementsByTagName('Phone');
+									var phone = child[j].innerHTML;
+									divElement = document.getElementById('phone');
+									divElement.innerHTML = phone;
+									break;
 
 								/* This is not used in the current resume, but keeping it*/
 								/*case 'Profile':
@@ -70,43 +93,35 @@ function displayLists()
 									break;*/
 
 								case 'Street':
-									//var street = subChild.getElementsByTagName('Street')
-									var street = child[j].innerHTML;
-									divElement = document.getElementById('street');
-									divElement.innerHTML = street;
+									//street = child[j].getElementsByTagName('Street')
+									street = child[j].innerHTML;
+									//divElement = document.getElementById('street');
+									//divElement.innerHTML = street;
 									break;
 
 								case 'Town':
 									//town = subChild.getElementsByTagName('Town');
-									var town = child[j].innerHTML;
-									divElement = document.getElementById('town');
-									divElement.innerHTML = town;
-									break;
-
-								case 'Phone':
-									//phone = subChild.getElementsByTagName('Phone');
-									var phone = child[j].innerHTML;
-									divElement = document.getElementById('phone');
-									divElement.innerHTML = phone;
-									break;
-
-								case 'Email':
-									//var email = subChild.getElementsByTagName('Email'); 
-									var email = child[j].innerHTML;
-									divElement = document.getElementById('email');
-									divElement.innerHTML = street + town + phone + email;
+									town = child[j].innerHTML;
+									//divElement = document.getElementById('town');
+									//divElement.innerHTML = town;
 									break;
 
 								case 'Summary':
 									//var summPara = subChild.getElementsByTagName('Summary');
 									var summPara = child[j].innerHTML;
 									divElement = document.getElementById('about-me');
-									divElement.innerHTML = summPara;
+									//divElement.innerHTML = summPara;
 									break;
 									
 								default:
 									// Nothing
+									
+									
 							}
+							
+							divElement = document.getElementById('address');
+							console.log(town);
+							divElement.innerHTML = '<p>' + street + '</p><p>' + town + '</p>';
 
 						}
 					
