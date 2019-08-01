@@ -13,15 +13,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
-
 	<body>		
 		<nav>
-			<a href="#">Home</a>
-			<a href="#">About Me</a>
-			<a href="#">Employment</a>
-			<a href="#">Education</a>
-			<a href="#">Other Information</a>
-			<a href="#">Cover Letter</a>	
+			<div class="nav-elements">
+				<a href="#">Home</a>
+				<a href="#">About Me</a>
+				<a href="#">Employment</a>
+				<a href="#">Education</a>
+				<a href="#">Other Information</a>
+				<a href="#">Cover Letter</a>
+			</div>
 		</nav>
 
 		<main-container>
@@ -52,15 +53,18 @@
 			</header>
 			<div class="header-line"></div>
 			
-			<section class="left-column">
-				<div id="work-experience"></div>
+			<section class="main-content">
+				<article class="left-column">
+					<div id="work-experience"><h3>EXPERIENCE</h3><div class="content-line"></div></div>
+				</article>
+				<article class="right-column">
+					<div id="about-me"><h3>ABOUT ME</h3><div class="content-line"></div></div>
+					<div id="education"><h3>EDUCATION</h3><div class="content-line"></div></div>
+				<div id="other-information"><h3>OTHER INFORMATION</h3><div class="content-line"></div></div>
+				</article>
 			</section>
-				<section class="right-column">
-				<div id="about-me"></div>
-				<div id="education"></div>
-				<div id="other-information"></div>
-			</section>
-			<section id="skills"></section>
+			
+		<section id="skills"></section>
 		</main-container>
 	</body>
 	<script>displayLists();</script>
