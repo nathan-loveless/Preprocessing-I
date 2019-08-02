@@ -1,5 +1,6 @@
 // JavaScript Document
 var connection = null;
+var lastClicked = 'home';
 
 function displayLists()
 {
@@ -99,7 +100,6 @@ function displayLists()
 							}
 							
 							divElement = document.getElementById('address');
-							console.log(town);
 							divElement.innerHTML = '<p>' + street + '</p><p>' + town + '</p>';
 
 						}
@@ -292,4 +292,147 @@ function displayLists()
 						break;
 			}
 	}
+}
+
+function homeClicked()
+{
+	var container = null;
+	
+	container = document.getElementById('profile-image');
+	container.style.opacity = '1.0';
+	container.style.border = '4px solid @text-color';
+	container = document.getElementById('contact-information');	
+	container.style.opacity = '1.0';
+	container.style.border = 'none';
+	container = document.getElementById('header-line');	
+	container.style.opacity = '1.0';
+	container.style.border = 'none';
+	container = document.getElementById('left-column');	
+	container.style.opacity = '1.0';
+	container = document.getElementById('right-column');	
+	container.style.opacity = '1.0';
+	container.style.border = '2px solid black';
+	container = document.getElementById('education');	
+	container.style.opacity = '1.0';
+	container.style.border = 'none';
+	container = document.getElementById('about-me');	
+	container.style.opacity = '1.0';
+	container.style.border = 'none';
+	container = document.getElementById('other-information');	
+	container.style.opacity = '1.0';
+	container.style.border = 'none';
+	container = document.getElementById('skills');	
+	container.style.opacity = '1.0';
+	container.style.border = '2px solid black';;
+	
+	fixLast();
+	lastClicked = 'home';
+}
+
+function aboutMeClicked()
+{	
+	var container = null;
+	
+	container = document.getElementById('profile-image');
+	container.style.opacity = '0.1';
+	container = document.getElementById('contact-information');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('header-line');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('left-column');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('education');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('other-information');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('skills');	
+	container.style.opacity = '0.1';
+	
+	// Get about-me div then fade out everything else
+	var focused = document.getElementById('about-me');
+	focused.style.border = '3px solid red';
+	focused.style.padding = '5px';
+	focused.style.boxShadow = '5px 5px 5px 5px #800000';
+	
+	if(lastClicked != 'home')
+	{
+		fixLast();
+	}
+	console.log('In about-me: ' + lastClicked);
+	lastClicked = 'about-me';
+}
+
+function employmentClicked()
+{
+	var container = null;
+	
+	container = document.getElementById('profile-image');
+	container.style.opacity = '0.1';
+	container = document.getElementById('contact-information');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('header-line');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('right-column');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('education');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('other-information');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('skills');	
+	container.style.opacity = '0.1';
+	
+	// Get about-me div then fade out everything else
+	var focused = document.getElementById('work-experience');
+	focused.style.border = '3px solid red';
+	focused.style.padding = '5px';
+	focused.style.boxShadow = '5px 5px 5px 5px #800000';
+	
+	if(lastClicked !== 'home')
+	{
+		fixLast();
+	}
+	console.log('In employment: ' + lastClicked);
+	lastClicked = 'work-experience';
+}
+
+function educationClicked()
+{
+	var container = null;
+	
+	container = document.getElementById('profile-image');
+	container.style.opacity = '0.1';
+	container = document.getElementById('contact-information');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('header-line');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('left-column');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('about-me');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('other-information');	
+	container.style.opacity = '0.1';
+	container = document.getElementById('skills');	
+	container.style.opacity = '0.1';
+	
+	// Get about-me div then fade out everything else
+	var focused = document.getElementById('education');
+	focused.style.border = '3px solid red';
+	focused.style.padding = '5px';
+	focused.style.boxShadow = '5px 5px 5px 5px #800000';
+	
+	if(lastClicked !== 'home')
+	{
+		fixLast();
+	}
+	
+	lastClicked = 'education';
+}
+
+function fixLast()
+{
+	console.log(lastClicked);
+	var container = document.getElementById(lastClicked);
+	container.style.border = 'none';
+	container.style.padding = '0px';
+	container.style.boxShadow = 'none';
 }

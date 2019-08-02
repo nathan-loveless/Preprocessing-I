@@ -16,24 +16,24 @@
 	<body>		
 		<nav>
 			<div class="nav-elements">
-				<a href="#">Home</a>
-				<a href="#">About Me</a>
-				<a href="#">Employment</a>
-				<a href="#">Education</a>
-				<a href="#">Other Information</a>
+				<a href="#home" onClick="homeClicked();">Home</a>
+				<a href="#about-me" onClick="aboutMeClicked();">About Me</a>
+				<a href="#employment-link" onClick="employmentClicked();">Employment</a>
+				<a href="#education-link" onClick="educationClicked();">Education</a>
+				<a href="#other-information-link" onClick="otherClicked();">Other Information</a>
 				<a href="#">Cover Letter</a>
 			</div>
 		</nav>
 
-		<main-container>
+		<main-container id="main-container">
 			<header>
-				<div class="profile-image"></div>
-				<div class="contact-information">
+				<div id="profile-image"></div>
+				<div id="contact-information">
 					<div id="name"><h1></h1></div>
 					<div id="title"><h2></h2></div>
-					<div class="rcolumn-header">
-						<div class="birthday-container">
-							<div class="birthday-image"></div>
+					<div>
+						<div id="birthday-container">
+							<div id="birthday-image"></div>
 							<div id="birthday"></div>
 						</div>						
 						<div class="email-container">
@@ -51,13 +51,13 @@
 						</div>					
 				</div>		
 			</header>
-			<div class="header-line"></div>
+			<div id="header-line"></div>
 			
 			<section class="main-content">
-				<article class="left-column">
+				<article id="left-column">
 					<div id="work-experience"><h3>EXPERIENCE</h3><div class="content-line"></div></div>
 				</article>
-				<article class="right-column">
+				<article id="right-column">
 					<div id="about-me"><h3>ABOUT ME</h3><div class="content-line"></div></div>
 					<div id="education"><h3>EDUCATION</h3><div class="content-line"></div></div>
 				<div id="other-information"><h3>OTHER INFORMATION</h3><div class="content-line"></div></div>
