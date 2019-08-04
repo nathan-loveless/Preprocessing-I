@@ -251,20 +251,82 @@ main-container
 		}
 }
 
-		a:target
+a:target
+{
+	background-color: @text-color;
+	color: white;
+
+	#about-me
+	{
+	opacity: 0.1;
+	}
+
+	#work-experience
+	{
+		opacity: 0.1;
+	}			
+}
+
+body
+{
+	@media (max-width: 500px)
+	{
+		width: 96vw;
+		margin: 0 auto;
+		flex-direction: column;
+	}
+	
+	nav
+	{
+		@media (max-width: 500px)
 		{
-			background-color: @text-color;
-			color: white;
-			
-			#about-me
-			{
-			opacity: 0.1;
-			}
-			
-			#work-experience
-			{
-				opacity: 0.1;
-			}			
+			position: relative;
+			width: 98%;
+			flex-direction: column;
 		}
+	}
+	
+	.nav-elements
+	{
+		@media (max-width: 500px)
+		{
+			width: 98%;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	
+	.header-line
+	{
+		@media (max-width: 500px)
+		{
+			width: 98%;
+			flex-direction: column;
+		}
+	}
+	
+		#main-container
+		{
+		@media (max-width: 500px)
+		{
+			width: 98%;
+			flex-direction: column;
+		}
+	}
+	
+		header
+	{	
+		@media (max-width: 500px)
+		{
+			width: 98%;
+			flex-direction: column;
+		}
+	}
+	
+}
+		
+
+
+
 
 
